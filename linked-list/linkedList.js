@@ -16,16 +16,16 @@ class LinkedList {
       this.HEAD = new Node(value)
     } else {
       let current = this.HEAD
-      while (this.next) {
-        current = this.next
+      while (current.next) {
+        current = current.next
       }
-      current = new Node(value)
+      current.next = new Node(value)
     }
     this.length++
   }
 
   insert(position, value) {
-    if (position < 0 || position < this.length) return false
+    if (position < 0 || position > this.length) return false
 
     let node = new Node(value)
 
