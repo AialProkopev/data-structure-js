@@ -83,11 +83,40 @@ class LinkedList {
     this.length--
     return current.value
   }
+
+  remove(element) {
+    this.removeAt(this.indexOf(element))
+  }
+
+  indexOf(element) {
+    let current = this.HEAD
+    let index = 0
+
+    while (current) {
+      if (element === current) {
+        return index
+      }
+      current = current.next
+      index++
+    }
+
+    return -1
+  }
+
+  size() {
+    return this.length
+  }
+
+  isEmpty() {
+    return this.length === 0
+  }
+
+  print() {
+    let current = this.HEAD
+
+    while (current) {
+      console.log(current)
+      current = current.next
+    }
+  }
 }
-
-let list = new LinkedList()
-
-list.add(10)
-list.add(20)
-list.add(30)
-console.log(list)
