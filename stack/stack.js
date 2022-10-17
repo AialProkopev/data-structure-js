@@ -18,6 +18,9 @@ class Stack {
     return this.array.length
   }
   top() {
+    if (this.size === 0) {
+      return
+    }
     return this.array[this.size() - 1]
   }
   isEmpty() {
@@ -37,3 +40,7 @@ console.log(stack)
 console.log(stack.size())
 console.log(stack.top())
 console.log(stack.isEmpty())
+stack.pop()
+stack.pop()
+stack.pop()
+console.log(stack)
