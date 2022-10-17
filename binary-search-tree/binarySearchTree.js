@@ -134,7 +134,7 @@ class BinarySearchTree {
       if (node) {
         doRight(node.right, callback)
         callback(node.value)
-        doLeft(node.left, callback)
+        doRight(node.left, callback)
       }
     }
   }
